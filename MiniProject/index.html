@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My website</title>
+    <link rel="shortcut icon" href="REVO icon.png" />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body class="CB">
+    <header>
+      <nav>
+        <div class="logo">
+          <img src="REVO icon.png" alt="logorevo" />
+        </div>
+
+        <ul class="menu">
+          <li><a href="#">Home</a></li>
+          <li><a href="OurProfile.html">Our profile</a></li>
+          <li><a href="#">Portofolio</a></li>
+          <li><a href="#">Massage Us</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="p1">
+      <h1 id="introb">HI, Welcom to Website</h1>
+      <p>Ini adalah website latihan mini project</p>
+    </div>
+    <div class="p1">
+      <h2>Our Headquarter</h2>
+      <div class="row">
+        <div class="column">
+          <div class="content">
+            <img src="inilah-8-perbedaan-kota-jakarta-dan-yogyakarta-pilih-tinggal-di-mana-NBEqXd4H2D.jpeg" alt="Jakarta" style="width: 100%" />
+            <h3>Jakarta</h3>
+          </div>
+        </div>
+        <div class="column">
+          <div class="content">
+            <img src="monumen-suroboyo.jpg" alt="Surabaya" style="width: 100%" />
+            <h3>Surabaya</h3>
+          </div>
+        </div>
+        <div class="column">
+          <div class="content">
+            <img src="Bandungc.jpg" alt="Bandung" style="width: 100%" />
+            <h3>Bandung</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="p1">
+      <h1>Massage Us</h1>
+      <form id="massageForm">
+        <label for="name">Nama:</label>
+        <input type="text" id="name" required />
+
+        <label for="birthdate">Tanggal Lahir:</label>
+        <input type="date" id="birthdate" required />
+
+        <label>Jenis Kelamin:</label>
+        <input type="radio" id="genderMale" name="gender" value="Laki-laki" required />
+        <label for="genderMale">Laki-laki</label>
+        <input type="radio" id="genderFemale" name="gender" value="Perempuan" required />
+        <label for="genderFemale">Perempuan</label>
+
+        <label for="message">Pesan:</label>
+        <textarea id="message" required></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+      <textarea id="output" readonly></textarea>
+    </div>
+    <script>
+      document.getElementById('massageForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        //ambil value
+        var name = document.getElementById('name').value;
+        var birthdate = document.getElementById('birthdate').value;
+        var gender = document.querySelector('input[name="gender"]:checked').value;
+        var message = document.getElementById('message').value;
+
+        var output = 'Nama: ' + name + '\n';
+        output += 'Tanggal Lahir: ' + birthdate + '\n';
+        output += 'Jenis Kelamin: ' + gender + '\n';
+        output += 'Pesan: ' + message;
+
+        var intro = 'HI, ' + name + ' Welcom to Website' + '\n';
+
+        document.getElementById('output').value = output;
+        document.getElementById('introb').innerHTML = intro;
+      });
+    </script>
+  </body>
+</html>
